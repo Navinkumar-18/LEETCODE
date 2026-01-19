@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        ArrayList<Integer>result=new ArrayList<>();
+        for(int n:nums1){
+        result.add(n);
+        }
+        for(int n:nums2){
+        result.add(n);
+        }
+
+        
+        Collections.sort(result);
+
+
+        int num=result.size();
+        if(num%2==0){
+           return  (result.get(num/2-1)+result.get(num/2))/2.0;
+        } else {
+            return result.get(num/2);
+        }
+    
+
+    }
+}
