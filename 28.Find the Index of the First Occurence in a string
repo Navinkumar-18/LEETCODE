@@ -1,0 +1,27 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+      return haystack.indexOf(needle);
+    }}
+//This code gets 100% complexity
+
+//This is the another complex solution for the same problem which give 2ms time complexity
+
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+      
+      if(needle.length()==0){
+        return 0;
+      }
+      for(int i=0;i<haystack.length()-needle.length();i++){
+      for(int j=0;j<needle.length();j++){
+          if(haystack.charAt(i+j)!=needle.charAt(j)){
+            break;
+        }if(j==needle.length()-1){
+            return i;
+        }
+      }
+      }
+return -1;
+    }
+}
