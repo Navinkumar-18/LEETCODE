@@ -1,0 +1,41 @@
+class Solution {
+    public void duplicateZeros(int[] arr) {
+      int zeros=0;
+      int n=arr.length-1;
+  
+//phase 1:Count tracking
+      for(int i=0;i <= n-zeros;i++){
+          if(arr[i]==0){
+
+            if(i==n-zeros){
+                arr[n]=0;
+                n--;
+                break;
+            }
+            zeros++;
+          }
+          
+      }
+//phase 2:Reverse pointing
+
+int right=n;
+int left=n-zeros;
+
+while(left>=0){
+    if(arr[left]==0){
+        arr[right]=0;
+        right--;
+
+        arr[right]=0;
+        right--;
+    }else{
+        arr[right]=arr[left];
+        right--;
+    }
+    left--;
+}
+
+
+
+    }
+}
