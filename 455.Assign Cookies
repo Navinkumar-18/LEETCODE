@@ -1,0 +1,20 @@
+import java.util.*;
+class Solution {
+    public int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(g);
+        Arrays.sort(s);
+        int p1=0;
+        int p2=0;
+        int count=0;
+         while(p2<s.length && p1<g.length){
+                if(s[p2]>=g[p1]){
+                   p1++;p2++;
+                   count++;
+                }else if(s[p2]<g[p1]){
+                    p2++;
+                }
+            }
+        
+        return count;
+    }
+}
